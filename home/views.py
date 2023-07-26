@@ -14,3 +14,9 @@ def home(request):
 
 def sucess_page(request):
     return HttpResponse("Hey this is a sucess page")
+
+def about_page(request):
+    return render(request,"home/about.html")
+
+def contact_page(request):
+    return render(request,"home/contact.html")

@@ -21,6 +21,10 @@ from home.views import *
 urlpatterns = [
     path('',home ,name="home"),
 
+    path('contact_page/',contact_page,name="Contact"),
+
+    path('about_page/',about_page,name="About"),
+
     path('sucess_page/', sucess_page, name="sucess_page"),
     
     path('admin/', admin.site.urls),
