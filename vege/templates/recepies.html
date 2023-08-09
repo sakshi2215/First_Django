@@ -22,4 +22,28 @@
         <button type="submit" class="btn btn-success">Add Recepie</button>
       </form>
  </div>
+
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.no</th>
+      <th scope="col">Recepie Name</th>
+      <th scope="col">Recepie Description</th>
+      <th scope="col">Image</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for recepie in recepies %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{recepie.recipie_name}}</td>
+      <td>{{recepie.recipie_description}}</td>
+      <td><img src="/media/{{recepie.recipie_image}}" style="height: 200px;"></td>
+      <td><a href="/delete-recepie/{{recepie.id}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+   
+  </tbody>
+</table>
 {% endblock %}

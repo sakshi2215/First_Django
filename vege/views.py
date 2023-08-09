@@ -19,5 +19,11 @@ def recepies(request):
         )
         return redirect('/recepies/')
 
-    
-    return render(request,"recepies.html")
+    queryset= Recepies.objects.all()
+    context = {'recepies':queryset}
+    return render(request,"recepies.html",context=context)
+
+def delete_recepie(request, id):
+    queryset = Recepies.objects.get(id= id)
+    queryset.delete()
+    return redirect('/recepies/')
